@@ -1,12 +1,16 @@
-import React from "react";
+import React from 'react';
+import user from './Profile/user.json';
+import { Profile } from './Profile/Profile';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Edit and save to reload.</p>
-      </header>
-    </div>
+    <Profile
+      username={user.username}
+      tag={user.tag}
+      location={user.location}
+      avatar={user.avatar}
+      stats={user.stats}
+    />
   );
 }
 
