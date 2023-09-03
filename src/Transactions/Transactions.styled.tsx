@@ -14,7 +14,7 @@ export const TD = styled.td`
 `;
 
 export const TR = styled.tr`
-  &:nth-child(2n) {
+  &:nth-of-type(2n) {
     background-color: grey;
   }
 `;
