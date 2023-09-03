@@ -40,7 +40,7 @@ export const ProfileImage = styled.img`
 `;
 
 export const StatsList = styled.ul`
-  width: 100%;
+  width: 220px;
   padding: 0;
   margin-bottom: 0;
   list-style: none;
