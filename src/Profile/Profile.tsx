@@ -1,5 +1,15 @@
 import React from 'react';
 
+import {
+  Container,
+  ProfileImage,
+  ProfileDescription,
+  Info,
+  StatsList,
+  StatsListItem,
+  StatsListItemInfo,
+} from './Profile.styled';
+
 interface Profile {
   username: string;
   tag: string;
@@ -19,27 +29,27 @@ export const Profile: React.FC<Profile> = ({
   avatar,
   stats: { followers, likes, views },
 }) => (
-  <div className="profile">
-    <div className="description">
-      <img src={avatar} alt={username} className="avatar" />
-      <p className="name">{username}</p>
-      <p className="tag">{tag}</p>
-      <p className="location">{location}</p>
-    </div>
+  <Container>
+    <ProfileDescription>
+      <ProfileImage src={avatar} alt={username} />
+      <Info fontWeight={700}>{username}</Info>
+      <Info>{tag}</Info>
+      <Info>{location}</Info>
+    </ProfileDescription>
 
-    <ul className="stats">
-      <li>
-        <span className="label">Followers</span>
-        <span className="quantity">{followers}</span>
-      </li>
-      <li>
-        <span className="label">Views</span>
-        <span className="quantity">{views}</span>
-      </li>
-      <li>
-        <span className="label">Likes</span>
-        <span className="quantity">{likes}</span>
-      </li>
-    </ul>
-  </div>
+    <StatsList>
+      <StatsListItem>
+        <StatsListItemInfo className="label">Followers</StatsListItemInfo>
+        <StatsListItemInfo className="quantity">{followers}</StatsListItemInfo>
+      </StatsListItem>
+      <StatsListItem>
+        <StatsListItemInfo>Views</StatsListItemInfo>
+        <StatsListItemInfo className="quantity">{views}</StatsListItemInfo>
+      </StatsListItem>
+      <StatsListItem>
+        <StatsListItemInfo className="label">Likes</StatsListItemInfo>
+        <StatsListItemInfo className="quantity">{likes}</StatsListItemInfo>
+      </StatsListItem>
+    </StatsList>
+  </Container>
 );

@@ -1,4 +1,8 @@
-import { IFriendListItem, FriendListItem } from './FriendListItem';
+import {
+  IFriendListItem,
+  FriendListItem,
+} from '../FriendsListItem/FriendListItem';
+import { List } from './FriendList.styled';
 
 interface IFriendList {
   friends: IFriendListItem[];
@@ -6,15 +10,15 @@ interface IFriendList {
 
 export const FriendList: React.FC<IFriendList> = ({ friends }) => {
   return (
-    <ul className="friend-list">
+    <List>
       {friends.map(({ id, avatar, isOnline, name }) => (
         <FriendListItem
-          id={id}
+          key={id}
           avatar={avatar}
           isOnline={isOnline}
           name={name}
         />
       ))}
-    </ul>
+    </List>
   );
 };

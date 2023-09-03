@@ -1,3 +1,5 @@
+import { TH, TD, TR } from './Transactions.styled';
+
 interface IData {
   id: string;
   type: string;
@@ -14,19 +16,19 @@ export const Transactions: React.FC<ITransactions> = ({ items }) => {
     <table className="transaction-history">
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+          <TH>Type</TH>
+          <TH>Amount</TH>
+          <TH>Currency</TH>
         </tr>
       </thead>
 
       <tbody>
         {items.map(({ id, amount, currency, type }) => (
-          <tr key={id}>
-            <td>{type}</td>
-            <td>{amount}</td>
-            <td>{currency}</td>
-          </tr>
+          <TR key={id}>
+            <TD>{type}</TD>
+            <TD>{amount}</TD>
+            <TD>{currency}</TD>
+          </TR>
         ))}
       </tbody>
     </table>

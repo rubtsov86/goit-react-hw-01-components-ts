@@ -1,4 +1,5 @@
-import { StatisticsItem, IData } from './StatisticsItem';
+import { StatisticsItem, IData } from '../StatisticsItem/StatisticsItem';
+import { StatisticsList, Title, Container } from './Statistics.styled';
 
 interface Statistics {
   title?: string;
@@ -7,14 +8,14 @@ interface Statistics {
 
 export const Statistics: React.FC<Statistics> = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      {{ title } && <h2 className="title">{title}</h2>}
+    <Container className="statistics">
+      {{ title } && <Title className="title">{title}</Title>}
 
-      <ul className="stat-list">
+      <StatisticsList className="stat-list">
         {stats.map(({ id, label, percentage }) => (
-          <StatisticsItem id={id} label={label} percentage={percentage} />
+          <StatisticsItem key={id} label={label} percentage={percentage} />
         ))}
-      </ul>
-    </section>
+      </StatisticsList>
+    </Container>
   );
 };
